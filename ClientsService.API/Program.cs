@@ -1,4 +1,7 @@
+using ClientsService.Core.Interfaces;
 using ClientsService.Infraestructure.Data;
+using ClientsService.Infraestructure.Mappings;
+using ClientsService.Infraestructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 namespace ClientsService.API
@@ -12,6 +15,8 @@ namespace ClientsService.API
             // Add services to the container.
             builder.Services.AddDbContext<ClientsDBContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("ClientsDBConnection")));
             builder.Services.AddControllers();
+            builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
+            builder.Services.AddScoped<IClientRepository, ClientRepository>();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();

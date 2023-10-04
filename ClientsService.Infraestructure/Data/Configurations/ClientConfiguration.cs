@@ -10,8 +10,6 @@ namespace ClientsService.Infraestructure.Data.Configurations
         {
             builder.ToTable("Client");
 
-            builder.Property(e => e.Id).ValueGeneratedNever();
-
             builder.Property(e => e.Address)
                 .HasMaxLength(10)
                 .IsFixedLength();

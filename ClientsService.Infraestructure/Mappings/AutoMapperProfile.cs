@@ -10,6 +10,9 @@ namespace ClientsService.Infraestructure.Mappings
         {
             CreateMap<Client, ClientDto>();
             CreateMap<ClientDto, Client>();
+
+            CreateMap<DocumentType, DocumentTypeDto>();
+            CreateMap<DocumentTypeDto, DocumentType>();
         }
     }
 }

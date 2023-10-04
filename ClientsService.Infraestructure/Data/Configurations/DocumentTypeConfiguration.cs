@@ -10,8 +10,6 @@ namespace ClientsService.Infraestructure.Data.Configurations
         {
             builder.ToTable("DocumentType");
 
-            builder.Property(e => e.Id).ValueGeneratedNever();
-
             builder.Property(e => e.Code)
                 .HasMaxLength(3)
                 .IsUnicode(false);
